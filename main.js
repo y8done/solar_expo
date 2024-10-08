@@ -345,7 +345,7 @@ document.getElementById('earthmoon3DBtn').addEventListener('click', () => {
 function moveToPlanet3D(planetName) {
   console.log(`Moving to ${planetName}'s 3D model`);
     // Redirect to the 3D model page with the planet name as a query parameter
-    window.location.href = `3D/3dmodel.html?planet=${planetName}`;
+    window.location.href = `3dmodel.html?planet=${planetName}`;
 
 }
 // Function to set up planet buttons
