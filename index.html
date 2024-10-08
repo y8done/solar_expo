@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+Z2T+F2D5Q1gjL4hcF8p6Gh7p3+NQz8DkA1StmMnYd7XhRk+8lNkNA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            color: white;
+        }
+        #canvas {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full height */
+        }
+        #sidebar {
+           
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            color: white;
+            padding: 10px;
+            height: max-content;
+            margin-top: 10px;
+            margin-left: 20px;
+            z-index: 1; /* Make sure it stays above the canvas */
+            transition: transform 0.3s ease; /* Add transition for sliding effect */
+        border-color:aqua;
+        background-color: #11101047;
+        text-shadow: 0.5px 0.3px #ff0000;
+        border-radius: 0px 8px;
+        box-shadow: 0 0.5px 10px rgba(2, 213, 255, 0.904);
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 5px;
+            display: flex; /* Flex for icon and text alignment */
+            align-items: center; /* Center align items */
+        }
+        button i {
+            margin-right: 10px; /* Space between icon and text */
+        }
+        button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+        #descriptionBox {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        padding: 20px;
+        border-color:aqua;
+        background-color: #11101047;
+        text-shadow: 0.5px 0.3px #ff0000;
+        border-radius: 0px 8px;
+        box-shadow: 0 0.5px 10px rgba(2, 213, 255, 0.904);
+            max-width: 300px; /* Limit the width */
+            display: none; /* Hide initially */
+            z-index: 2; /* Stay above other elements */
+        }
+    </style>
+
+</head>
+<body>
+    <div id="canvas">
+        <canvas id="threeCanvas"></canvas>
+        <div id="sidebar" class="overflow-y-auto" >
+            <h2 class="text-lg font-bold mb-4">Planets</h2>
+            <button id="sunBtn"><i class="fas fa-sun"></i> Sun</button>
+
+            <button id="mercuryBtn"><i class="fas fa-sun"></i> Mercury</button>
+            <button id="mercury3DBtn"><i class="fas fa-eye"></i> View 3D Model</button>
+            
+            <button id="venusBtn"><i class="fas fa-cloud-sun"></i> Venus</button>
+            <button id="venus3DBtn"><i class="fas fa-eye"></i> View 3D Model</button>
+
+            <button id="earthBtn"><i class="fas fa-globe-americas"></i> Earth</button>
+            <button id="earth3DBtn"><i class="fas fa-eye"></i> View 3D Model</button>
+
+            <button id="earthmoon3DBtn"><i class="fas fa-eye"></i>Earth's Moon 3D Model</button>    
+            <button id="marsBtn"><i class="fas fa-redo"></i> Mars</button>
+            <button id="mars3DBtn"><i class="fas fa-eye"></i> View 3D Model</button>
+
+            <button id="jupiterBtn"><i class="fas fa-star"></i> Jupiter</button>
+            <button id="jupiter3DBtn"><i class="fas fa-eye"></i> View 3D Model</button>
+
+            <button id="saturnBtn"><i class="fas fa-star-and-crescent"></i> Saturn</button>
+            <button id="saturn3DBtn"><i class="fas fa-eye"></i> View 3D Model</button>
+
+            <button id="uranusBtn"><i class="fas fa-water"></i> Uranus</button>
+            <button id="uranus3DBtn"><i class="fas fa-eye"></i> View 3D Model</button>
+
+            <button id="neptuneBtn"><i class="fas fa-ocean"></i> Neptune</button>
+            <button id="neptune3DBtn"><i class="fas fa-eye"></i> View 3D Model</button>
+
+            <button id="plutoBtn"><i class="fas fa-moon"></i> Pluto</button>
+            <button id="pluto3DBtn"><i class="fas fa-eye"></i> View 3D Model</button>
+            <button id="refreshBtn"><i class="fas fa-moon"></i>Refresh</button>
+            <button id="toggleOrbitsBtn"><i class="fas fa-moon"></i>Toggle Orbits</button>
+        </div>
+    </div>
+
+    <!-- Description Box -->
+    <div id="descriptionBox">
+        <h2 id="descriptionTitle" class="text-lg font-bold mb-2">Planet Name</h2>
+        <p id="descriptionText"><ul>
+          <li id="intro">intro</li>
+          <li id="mass">mass</li>
+          <li id="radius">radious</li>
+          <li id="rotation">rotation</li>
+          <li id="atmosphere">atmosphere</li>
+          <li id="moon">moon</li>
+        </ul></p>
+
+    </div>
+
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
