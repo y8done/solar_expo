@@ -26,7 +26,7 @@ camera.lookAt(0, 0, 0);
 
 // Create the Sun
 const sunGeometry = new THREE.SphereGeometry(5, 64, 64);
-const sunTexture = new THREE.TextureLoader().load('./public/8k_sun.jpg');
+const sunTexture = new THREE.TextureLoader().load('8k_sun.jpg');
 const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture});
 const sun = new THREE.Mesh(sunGeometry, sunMaterial);
 SolarScene.add(sun);
@@ -108,15 +108,15 @@ bloomPass.radius = 0.5;
 composer.addPass(bloomPass);
 
 const scaleFactor = 25; // Adjust this factor as needed for visibility
-const mercuryData = createPlanet('./public/8k_mercury.jpg', 0.2, 0.387 * scaleFactor, 0.20563, 7.0, 88.0, 58.646);
-const venusData = createPlanet('./public/8k_venus_surface.jpg', 0.4, 0.723 * scaleFactor, 0.006772, 3.86, 224.701, 243.022);
-const earthData = createPlanet('./public/8k_earth_daymap.jpg', 0.5, 1 * scaleFactor, 0.016708, 7.155, 365.25638, 1.0);
-const marsData = createPlanet('./public/8k_mars.jpg', 0.3, 1.524 * scaleFactor, 0.0934, 5.65, 686.971, 1.025);
-const jupiterData = createPlanet('./public/8k_jupiter.jpg', 0.7, 5.204 * scaleFactor, 0.0489, 6.09, 4332.59, 0.415);
-const saturnData = createPlanet('./public/8k_saturn.jpg', 0.6, 9.582 * scaleFactor, 0.0565, 5.51, 10759.22, 0.444);
-const uranusData = createPlanet('./public/2k_uranus.jpg', 0.5, 19.218 * scaleFactor, 0.046381, 6.48, 30688.5, 0.718);
-const neptuneData = createPlanet('./public/2k_neptune.jpg', 0.4, 30.070 * scaleFactor, 0.009456, 6.43, 60182.0, 0.671);
-const plutoData   = createPlanet('./public/8k_pluto.jpg', 0.2, 39.48 * scaleFactor, 0.2488, 11.88, 90560.0, 0.67); // Pluto
+const mercuryData = createPlanet('8k_mercury.jpg', 0.2, 0.387 * scaleFactor, 0.20563, 7.0, 88.0, 58.646);
+const venusData = createPlanet('8k_venus_surface.jpg', 0.4, 0.723 * scaleFactor, 0.006772, 3.86, 224.701, 243.022);
+const earthData = createPlanet('8k_earth_daymap.jpg', 0.5, 1 * scaleFactor, 0.016708, 7.155, 365.25638, 1.0);
+const marsData = createPlanet('8k_mars.jpg', 0.3, 1.524 * scaleFactor, 0.0934, 5.65, 686.971, 1.025);
+const jupiterData = createPlanet('8k_jupiter.jpg', 0.7, 5.204 * scaleFactor, 0.0489, 6.09, 4332.59, 0.415);
+const saturnData = createPlanet('8k_saturn.jpg', 0.6, 9.582 * scaleFactor, 0.0565, 5.51, 10759.22, 0.444);
+const uranusData = createPlanet('2k_uranus.jpg', 0.5, 19.218 * scaleFactor, 0.046381, 6.48, 30688.5, 0.718);
+const neptuneData = createPlanet('2k_neptune.jpg', 0.4, 30.070 * scaleFactor, 0.009456, 6.43, 60182.0, 0.671);
+const plutoData   = createPlanet('8k_pluto.jpg', 0.2, 39.48 * scaleFactor, 0.2488, 11.88, 90560.0, 0.67); // Pluto
 
 const planets = [
   mercuryData,
