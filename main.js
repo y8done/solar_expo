@@ -1,9 +1,9 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { Raycaster, Vector2 } from 'three';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import * as THREE from './three';
+import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
+import { Raycaster, Vector2 } from './three';
+import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
 // Create the SolarScene, camera, and renderer
 const SolarScene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100000);
